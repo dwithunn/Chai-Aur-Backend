@@ -1,8 +1,5 @@
 import multer from "multer"
-import express from 'express'
 
-
-const app = express()
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -10,7 +7,7 @@ const storage = multer.diskStorage({
     },
     filename: function(req, file, cb) {
         // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-        cb(null, file.fieldname + '-' + uniqueSuffix)
+        cb(null, file.fieldname)
     }
 })
 
